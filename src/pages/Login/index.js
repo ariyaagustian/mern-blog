@@ -1,8 +1,10 @@
 import React from 'react'
 import { LoginBg } from '../../assets'
 import { Button, Gap, Input, Link } from '../../components'
+import {useHistory} from 'react-router-dom'
 
 const Login = () => {
+    const history = useHistory();
     return (
         <div className="main-page">
             <div className="left">
@@ -14,9 +16,9 @@ const Login = () => {
                 <Gap height={18} />
                 <Input label="Password" placeholder="Password"></Input>
                 <Gap height={50} />
-                <Button title="Login"></Button>
+                <Button title="Login" onClick={()=> history.push('/')}></Button>
                 <Gap height={100} />
-                <Link title="Belum punya akun?"></Link>
+                <Link title="Belum punya akun?" onClick={()=> history.push('/register')}></Link>
             </div>
         </div>
     )
